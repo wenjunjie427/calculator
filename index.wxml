@@ -1,0 +1,12 @@
+<!--index.wxml-->
+<!--整体-->
+<view class='body'>
+  <view class='bottom'>
+    <block wx:for='{{array}}' wx:key='{{index}}'>
+      <view class='item {{index<3? "gary":""}} {{(index==3 || index==7 ||index==11 || index==15 || index==18)? "orange":""}} {{index==16? "twoItem":""}}' bindtap='bindtap' data-index="{{index}}">{{item}}</view>
+    </block>
+  </view>
+  <view class='end'>
+    <text>{{currentEnd}}</text>
+  </view>
+</view>

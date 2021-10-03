@@ -1,0 +1,61 @@
+/**index.wxss**/
+.body{
+  width: 100%;
+  height: 100vh;
+  background-color: rgb(46, 44, 44);
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+.end{
+  width: 100%;
+  height: 25%;
+  position: relative;
+}
+
+.end text{
+  position: absolute;
+  bottom: 0;
+  right: 5px;
+  font-size: 60px;
+  color: white;
+  display: -webkit-box;
+  word-break: break-all;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+}
+
+.bottom{
+  width: 100%;
+  height: 450px;
+  background-color: green;
+}
+
+.bottom .item{
+  display: inline-block;
+  width: 25%;
+  height: 90px;
+  background-color: #eeeeee;
+  color: black;
+  text-align: center;
+  line-height: 90px;
+  font-size: 20px;
+  border: 1px solid #777777;
+  box-sizing: border-box;
+}
+
+.bottom .gray{
+  background-color: gray;
+  color: black;
+}
+
+.bottom .orange{
+  background-color: orange;
+  color: white;
+}
+
+.bottom .twoItem{
+  width: 50%;
+}
