@@ -32,8 +32,13 @@ Page({
         console.log("最后是运算符，不做处理");
       }else {
         if ((currentEnd + '').indexOf('.') == -1) {
-          currentEnd = currentEnd + '.';
-          operator += '.';
+          if (currentEnd == 0) {
+            currentEnd = currentEnd + '.';
+            operator = currentEnd;
+          }else {
+            currentEnd = currentEnd + '.';
+            operator = currentEnd;
+          }
         } else {
           console.log('已经是小数了，不做处理');
         }
@@ -46,15 +51,15 @@ Page({
       currentEnd = wx.binding.eval(operator);
       operator = '';
     }else if (index==2){
-      operator = this.fuhaoFun(operator,'%');
+      operator = this.fuhaoFun(operator,'%',currentEnd);
     }else if (index==3){
-      operator = this.fuhaoFun(operator,'/');
+      operator = this.fuhaoFun(operator,'/',currentEnd);
     }else if (index==7){
-      operator = this.fuhaoFun(operator,'*');
+      operator = this.fuhaoFun(operator,'*',currentEnd);
     }else if (index==11){
-      operator = this.fuhaoFun(operator,'-');
+      operator = this.fuhaoFun(operator,'-',currentEnd);
     }else if (index==15){
-      operator = this.fuhaoFun(operator,'+');
+      operator = this.fuhaoFun(operator,'+',currentEnd);
     }else if (index==16){
       currentEnd = this.yunsuanFun(operator,currentEnd,0);
       operator += '0';
@@ -100,15 +105,15 @@ Page({
       if (currentEnd == 0) {
         currentEnd = num;
       }else {
-        currentEnd = operator + '' + num;
+        currentEnd = operator + num;
       }
     }
     return currentEnd;
   },
 
-  fuhaoFun: function(operator,fuhao){
+  fuhaoFun: function(operator,fuhao,currentEnd){
     if(operator.length==0){
-      operator = 0+fuhao;
+      operator = currentEnd + fuhao;
       return operator;
     }
     var endW = operator.substr(-1,1);
