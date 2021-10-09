@@ -1,0 +1,62 @@
+/* pages/video/video.wxss */
+.section {
+  margin-top: 20px;
+  border: 3rpx solid cadetblue;
+  border-radius: 10rpx;
+  height: 80px;
+}
+
+.section_title {
+  margin-top: 10px;
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+.picker {
+  margin-top: 10px;
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+
+.others {
+  margin-top: 20px;
+  border: 3rpx solid cadetblue;
+  border-radius: 10rpx;
+  height: 40px;
+}
+
+.title {
+  margin-top: 10px;
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+
+.video {
+  height: 40px;
+  margin-top: 20px;
+  border: 3rpx solid cadetblue;
+  border-radius: 10rpx;
+  background-color: lightblue;
+}
+
+.oninput {
+  margin: 10px 10rpx;
+}
+
+.output {
+  display: flex;
+  height: 40px;
+  margin-top: 20px;
+  border: 3rpx solid cadetblue;
+  border-radius: 10rpx;
+  background-color: lightblue;
+}
+
+.value {
+  margin: auto 10rpx;
+}

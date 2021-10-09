@@ -1,0 +1,42 @@
+<!--pages/money/money.wxml-->
+<wxs module="filters" src="../../utils/addmul.wxs"></wxs>
+<view class="input_title">
+  <text class="title">输入金额（￥）</text>
+</view>
+
+<view class="money">
+  <view class="oninput">
+    <input bindinput="oninput"></input>
+  </view>
+</view>
+
+<view class="others">
+  <text class="title">直观表示方式</text>
+</view>
+
+<view class="icon">
+  <view class="combination">
+    <view class="num">{{filters.toFix2(value/6.5)}} 包薯片</view>
+    <image class="pic" src="https://ccdn.goodq.top/caches/82fee4717198948d6253764710980ee2/aHR0cHM6Ly93d3cueTNxLm5ldC9xZnktY29udGVudC91cGxvYWRzLzIwMjEvMDEvZjZlNGI4NzEyMzVkNjFlMjgwMTQxMWE3MGI4NWIxYzItMjEweDIxMC5wbmc_p_p100_p_3D.png"></image>
+  </view>
+  <view class="combination">
+      <view class="num">{{filters.toFix2(value/25)}} 顿午饭</view>
+      <image class="pic" src="https://ccdn.goodq.top/caches/82fee4717198948d6253764710980ee2/aHR0cHM6Ly93d3cueTNxLm5ldC9xZnktY29udGVudC91cGxvYWRzLzIwMjAvMTIvNjJiMmExODlmMDA2MDU0ZGViMmM4NTU3YWUxNjZlNDQtMjEweDIxMC5wbmc_p_p100_p_3D.png"></image>
+  </view>
+  <view class="combination">
+      <view class="num">{{filters.toFix2(value/500)}} 场约会</view>
+      <image class="pic" src="https://ccdn.goodq.top/caches/82fee4717198948d6253764710980ee2/aHR0cHM6Ly93d3cueTNxLm5ldC9xZnktY29udGVudC91cGxvYWRzLzIwMjEvMDIvYTYzMTk0YmE2YmRlYzE1MmUyOTIyODNhZWYwYjRjMzktMjEweDIxMC5wbmc_p_p100_p_3D.png"></image>
+  </view>
+  <view class="combination">
+      <view class="num">{{filters.toFix2(value/5000)}} 次旅行</view>
+      <image class="pic" src="https://ccdn.goodq.top/caches/82fee4717198948d6253764710980ee2/aHR0cHM6Ly93d3cueTNxLm5ldC9xZnktY29udGVudC91cGxvYWRzLzIwMjAvMTEvMTg1NzAxY2E5Y2ZiMGRmNWU0MzRmMDJkY2UyNjRjZDEtMjEweDIxMC5wbmc_p_p100_p_3D.png"></image>
+  </view>
+  <view class="combination">
+      <view class="num">{{filters.toFix2(value/248000)}} 场婚礼</view>
+      <image class="pic" src="https://ccdn.goodq.top/caches/82fee4717198948d6253764710980ee2/aHR0cHM6Ly93d3cueTNxLm5ldC9xZnktY29udGVudC91cGxvYWRzLzIwMjEvMDIvMjJjNTRhOWJjMjBhMTlmNDBmZTEzMTU4NDQ1YTdiOTYtMjEweDIxMC5wbmc_p_p100_p_3D.png"></image>
+  </view>
+  <view class="combination">
+      <view class="num">{{filters.toFix2(value/211534)}} 平汤臣一品</view>
+      <image class="pic" src="https://ccdn.goodq.top/caches/82fee4717198948d6253764710980ee2/aHR0cHM6Ly93d3cueTNxLm5ldC9xZnktY29udGVudC91cGxvYWRzLzIwMTkvMDUvYWQ3NGJiYjYwODRiMDg2NzNmN2JjN2JhMTMzOGM2NWYtMjEweDIxMC5wbmc_p_p100_p_3D.png"></image>
+  </view>
+</view>

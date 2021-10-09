@@ -1,0 +1,60 @@
+<!--pages/BMI/BMI.wxml-->
+<view class="input_title">
+  <text class="title">输入体重（kg）/ 身高（m）</text>
+</view>
+<view class="BMI">
+  <view class="oninput1">
+    <input bindinput="oninput1"></input>
+  </view>
+  <view class="oninput2">
+    <input bindinput="oninput2"></input>
+  </view>
+</view>
+
+<view class="input_title">
+  <text class="title">BMI指数</text>
+</view>
+
+<view class="output">
+  <view class="value">
+    <view wx:if="{{height!='' & weight!=''}}">{{weight/(height*height)}}</view>
+  </view>
+</view>
+
+<view class="input_title">
+  <text class="title">Tips</text>
+</view>
+
+<view class="tips">
+  <block wx:if="{{height!='' & weight!=''}}">
+    <block wx:if="{{weight/(height*height) < 18.5}}">
+      <view class="combination">
+        <view class="heath">你太瘦啦，要多吃一点哦</view>
+        <image class="pic" src="https://ccdn.goodq.top/caches/82fee4717198948d6253764710980ee2/aHR0cHM6Ly93d3cueTNxLm5ldC9xZnktY29udGVudC91cGxvYWRzLzIwMjAvMTEvZDA3ZDI5MjI5ODdjZTY3NzZhOTQ5MTgwOTUyMDBkZTMtMjEweDIxMC5wbmc_p_p100_p_3D.png"></image>
+      </view>
+    </block>
+    <block wx:elif="{{weight/(height*height) < 24}}">
+      <view class="combination">
+        <view class="heath">标准体型，你身材真好！</view>
+        <image class="pic" src="https://ccdn.goodq.top/caches/82fee4717198948d6253764710980ee2/aHR0cHM6Ly93d3cueTNxLm5ldC9xZnktY29udGVudC91cGxvYWRzLzIwMjAvMTEvMjQyNTdmNWM5MmIwNjA0MDI0MGI1OWU0NjkxMGVlY2UtMjEweDIxMC5wbmc_p_p100_p_3D.png"></image>
+      </view>
+    </block>
+    <block wx:elif="{{weight/(height*height) < 28}}">
+      <view class="combination">
+        <view class="heath">有一点肉，要注意饮食了</view>
+        <image class="pic" src="https://ccdn.goodq.top/caches/82fee4717198948d6253764710980ee2/aHR0cHM6Ly93d3cueTNxLm5ldC9xZnktY29udGVudC91cGxvYWRzLzIwMjEvMDEvNDVlYmNiNjVhMWZkYTk5N2ViMGE5Mzg1MGU2OWYyYzQtMjEweDIxMC5wbmc_p_p100_p_3D.png"></image>
+      </view>
+    </block>
+    <block wx:else="{{weight/(height*height) >= 28}}">
+      <view class="combination">
+        <view class="heath">有点过重啦，记得经常运动</view>
+        <image class="pic" src="https://ccdn.goodq.top/caches/82fee4717198948d6253764710980ee2/aHR0cHM6Ly93d3cueTNxLm5ldC9xZnktY29udGVudC91cGxvYWRzLzIwMjAvMDgvMGRkNGZlMDEwYjVlNjk2ODQ3MjBiNzQ3YjZhNDU0OTEtMjEweDIxMC5wbmc_p_p100_p_3D.png"></image>
+      </view>
+    </block>
+  </block>
+  <block wx:else>
+    <view class="combination">
+      <view class="heath">来测一下BMI吧^_^</view>
+    </view>
+  </block>
+</view>

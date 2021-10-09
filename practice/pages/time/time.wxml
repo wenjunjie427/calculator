@@ -1,0 +1,81 @@
+<!--pages/time/time.wxml-->
+<wxs module="filters" src="../../utils/addmul.wxs"></wxs>
+<view class="section"> 
+  <view class="section_title">选择单位</view>
+  <picker bindchange="bindchange" value="{{index}}" range="{{array}}">
+    <view class="picker">当前选择：{{array[index]}}</view>
+  </picker>
+</view>
+
+<view class="time">
+  <view class="oninput">
+    <input bindinput="oninput"></input>
+  </view>
+</view>
+
+<view class="others">
+  <text class="title">直观表示方式</text>
+</view>
+
+<view class="icon">
+  <view class="combination">
+    <view wx:if="{{index==0}}">
+      <view class="num">{{filters.toFix2(value/7)}} 次鱼的记忆（秒）</view>
+      <image class="pic" src="https://ccdn.goodq.top/caches/82fee4717198948d6253764710980ee2/aHR0cHM6Ly93d3cueTNxLm5ldC9xZnktY29udGVudC91cGxvYWRzLzIwMjAvMTIvYWNkMTc3MGEyYWFlM2UyOTVjOWE2Y2IwMjBhNGVlZjktMjEweDIxMC5wbmc_p_p100_p_3D.png"></image>
+    </view>
+    <view wx:else>
+      <view class="num">0.00 次鱼的记忆（秒）</view>
+      <image class="pic" src="https://ccdn.goodq.top/caches/82fee4717198948d6253764710980ee2/aHR0cHM6Ly93d3cueTNxLm5ldC9xZnktY29udGVudC91cGxvYWRzLzIwMjAvMTIvYWNkMTc3MGEyYWFlM2UyOTVjOWE2Y2IwMjBhNGVlZjktMjEweDIxMC5wbmc_p_p100_p_3D.png"></image>
+    </view>
+  </view>
+  <view class="combination">
+    <view wx:if="{{index==1}}">
+      <view class="num">{{filters.toFix2(value/45)}} 节课（分钟）</view>
+      <image class="pic" src="https://ccdn.goodq.top/caches/82fee4717198948d6253764710980ee2/aHR0cHM6Ly93d3cueTNxLm5ldC9xZnktY29udGVudC91cGxvYWRzLzIwMjAvMTIvZjNiMjkwNTZmMjMyMTk1MjM0Y2NjYjI3M2VmNzQ0MWEtMjEweDIxMC5wbmc_p_p100_p_3D.png"></image>
+    </view>
+    <view wx:else>
+      <view class="num">0.00 节课（分钟）</view>
+      <image class="pic" src="https://ccdn.goodq.top/caches/82fee4717198948d6253764710980ee2/aHR0cHM6Ly93d3cueTNxLm5ldC9xZnktY29udGVudC91cGxvYWRzLzIwMjAvMTIvZjNiMjkwNTZmMjMyMTk1MjM0Y2NjYjI3M2VmNzQ0MWEtMjEweDIxMC5wbmc_p_p100_p_3D.png"></image>
+    </view>
+  </view>
+  <view class="combination">
+    <view wx:if="{{index==1}}">
+      <view class="num">{{filters.toFix2(value/2)}} 个短视频（分钟）</view>
+      <image class="pic" src="https://ccdn.goodq.top/caches/82fee4717198948d6253764710980ee2/aHR0cHM6Ly93d3cueTNxLm5ldC9xZnktY29udGVudC91cGxvYWRzLzIwMjAvMTEvOWI0NzZiNTNkNTRkYTRkMjVkNDJlZGE4NmE2YjU3MzAtMjEweDIxMC5wbmc_p_p100_p_3D.png"></image>
+    </view>
+    <view wx:else>
+      <view class="num">0.00 个短视频（分钟）</view>
+      <image class="pic" src="https://ccdn.goodq.top/caches/82fee4717198948d6253764710980ee2/aHR0cHM6Ly93d3cueTNxLm5ldC9xZnktY29udGVudC91cGxvYWRzLzIwMjAvMTEvOWI0NzZiNTNkNTRkYTRkMjVkNDJlZGE4NmE2YjU3MzAtMjEweDIxMC5wbmc_p_p100_p_3D.png"></image>
+    </view>
+  </view>
+  <view class="combination">
+    <view wx:if="{{index==2}}">
+      <view class="num">{{filters.toFix2(value/1.55)}} 部电影（小时）</view>
+      <image class="pic" src="https://ccdn.goodq.top/caches/82fee4717198948d6253764710980ee2/aHR0cHM6Ly93d3cueTNxLm5ldC9xZnktY29udGVudC91cGxvYWRzLzIwMTkvMDUvZDViMDRmNWExYzYzZWFiNTA4NWExZTIwYjAyMGI0ZmMtMjEweDIxMC5wbmc_p_p100_p_3D.png"></image>
+    </view>
+    <view wx:else>
+      <view class="num">0.00 部电影（小时）</view>
+      <image class="pic" src="https://ccdn.goodq.top/caches/82fee4717198948d6253764710980ee2/aHR0cHM6Ly93d3cueTNxLm5ldC9xZnktY29udGVudC91cGxvYWRzLzIwMTkvMDUvZDViMDRmNWExYzYzZWFiNTA4NWExZTIwYjAyMGI0ZmMtMjEweDIxMC5wbmc_p_p100_p_3D.png"></image>
+    </view>
+  </view>
+  <view class="combination">
+    <view wx:if="{{index==2}}">
+      <view class="num">{{filters.toFix2(value/8)}} 次睡觉（小时）</view>
+      <image class="pic" src="https://ccdn.goodq.top/caches/82fee4717198948d6253764710980ee2/aHR0cHM6Ly93d3cueTNxLm5ldC9xZnktY29udGVudC91cGxvYWRzLzIwMjAvMTEvYTU3YjkxNzU4NWUwODZjYmJhNjdiMDQ0NmY1NTNmMGQtMjEweDIxMC5wbmc_p_p100_p_3D.png"></image>
+    </view>
+    <view wx:else>
+      <view class="num">0.00 次睡觉（小时）</view>
+      <image class="pic" src="https://ccdn.goodq.top/caches/82fee4717198948d6253764710980ee2/aHR0cHM6Ly93d3cueTNxLm5ldC9xZnktY29udGVudC91cGxvYWRzLzIwMjAvMTEvYTU3YjkxNzU4NWUwODZjYmJhNjdiMDQ0NmY1NTNmMGQtMjEweDIxMC5wbmc_p_p100_p_3D.png"></image>
+    </view>
+  </view>
+  <view class="combination">
+    <view wx:if="{{index==3}}">
+      <view class="num">{{filters.toFix2(value*6)}} 个暑假（年）</view>
+      <image class="pic" src="https://ccdn.goodq.top/caches/82fee4717198948d6253764710980ee2/aHR0cHM6Ly93d3cueTNxLm5ldC9xZnktY29udGVudC91cGxvYWRzLzIwMjAvMDkvMzAxMjk2Y2U3ZjUyZmZmZjQyMGU2NjhjMTQ5MzM0MDItMjEweDIxMC5wbmc_p_p100_p_3D.png"></image>
+    </view>
+    <view wx:else>
+      <view class="num">0.00 个暑假（年）</view>
+      <image class="pic" src="https://ccdn.goodq.top/caches/82fee4717198948d6253764710980ee2/aHR0cHM6Ly93d3cueTNxLm5ldC9xZnktY29udGVudC91cGxvYWRzLzIwMjAvMDkvMzAxMjk2Y2U3ZjUyZmZmZjQyMGU2NjhjMTQ5MzM0MDItMjEweDIxMC5wbmc_p_p100_p_3D.png"></image>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,32 @@
+<!--pages/video/video.wxml-->
+<wxs module="filters" src="../../utils/addmul.wxs"></wxs>
+<view class="section"> 
+  <view class="section_title">选择清晰度</view>
+  <picker bindchange="bindchange" value="{{index}}" range="{{array}}">
+    <view class="picker">当前选择：{{array[index]}}</view>
+  </picker>
+</view>
+
+<view class="others">
+  <text class="title">视频时长（s）</text>
+</view>
+<view class="video">
+  <view class="oninput">
+    <input bindinput="oninput"></input>
+  </view>
+</view>
+
+<view class="others">
+  <text class="title">视频大小</text>
+</view>
+<view class="output">
+  <view class="value">
+    <view wx:if="{{index==0}}">{{256*value/(8*1024)}} M</view>
+    <view wx:elif="{{index==1}}">{{200*value/3600}} M</view>
+    <view wx:elif="{{index==2}}">{{250*value/3600}} M</view>
+    <view wx:elif="{{index==3}}">{{300*value/3600}} M</view>
+    <view wx:elif="{{index==4}}">{{500*value/3600}} M</view>
+    <view wx:elif="{{index==5}}">{{1.5*1024*value/3600}} M</view>
+    <view wx:elif="{{index==6}}">{{22*1204*value/3600}} M</view>
+  </view>
+</view>

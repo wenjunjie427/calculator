@@ -1,0 +1,55 @@
+/* pages/run/run.wxss */
+.input_title {
+  margin-top: 20px;
+  border: 3rpx solid cadetblue;
+  border-radius: 10rpx;
+  height: 40px;
+}
+
+.title {
+  margin-top: 10px;
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+
+.run {
+  height: 40px;
+  margin-top: 20px;
+  border: 3rpx solid cadetblue;
+  border-radius: 10rpx;
+  background-color: lightblue;
+}
+.oninput {
+  margin: 10px 10rpx;
+}
+
+.state {
+  margin-top: 20px;
+  height: 350px;
+  border: 3rpx solid cadetblue;
+  border-radius: 10rpx;
+  background-color: lightblue;
+}
+
+.combination {
+  margin-top: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: auto;
+  height: auto;
+}
+
+.pic {
+  margin-top: 10px;
+  height: 150px;
+  width: 150px;
+}
+
+.condition {
+  margin-top: 5px;
+  margin-left: 10px;
+}

@@ -1,0 +1,24 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/logs/logs",
+    "pages/length/length",
+    "pages/weight/weight",
+    "pages/area/area",
+    "pages/volume/volume",
+    "pages/money/money",
+    "pages/food/food",
+    "pages/BMI/BMI",
+    "pages/run/run",
+    "pages/time/time",
+    "pages/video/video"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "calculator",
+    "navigationBarTextStyle":"black"
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

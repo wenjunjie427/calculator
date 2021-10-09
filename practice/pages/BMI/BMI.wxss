@@ -1,0 +1,77 @@
+/* pages/BMI/BMI.wxss */
+.input_title {
+  margin-top: 20px;
+  border: 3rpx solid cadetblue;
+  border-radius: 10rpx;
+  height: 40px;
+}
+
+.title {
+  margin-top: 10px;
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+
+.BMI {
+  display: flex;
+  height: 40px;
+  margin-top: 20px;
+  border: 3rpx solid cadetblue;
+  border-radius: 10rpx;
+  background-color: lightblue;
+}
+
+.oninput1 {
+  margin: auto 10rpx;
+  border-right: 3rpx solid black;
+}
+
+.oninput2 {
+  margin: auto 10rpx;
+}
+
+.output {
+  height: 80px;
+  margin-top: 20px;
+  border: 3rpx solid cadetblue;
+  border-radius: 10rpx;
+  background-color: lightblue;
+}
+
+.value {
+  margin-top: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tips {
+  margin-top: 20px;
+  height: 350px;
+  border: 3rpx solid cadetblue;
+  border-radius: 10rpx;
+  background-color: lightblue;
+}
+
+.combination {
+  margin-top: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: auto;
+  height: auto;
+}
+
+.pic {
+  margin-top: 10px;
+  height: 150px;
+  width: 150px;
+}
+
+.heath {
+  margin-top: 5px;
+  margin-left: 10px;
+}

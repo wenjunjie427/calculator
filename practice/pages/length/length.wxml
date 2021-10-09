@@ -1,0 +1,110 @@
+<!--pages/length/length.wxml-->
+<wxs module="filters" src="../../utils/addmul.wxs"></wxs>
+<view class="section1"> 
+  <view class="section1_title">原单位</view>
+  <picker bindchange="bindchange1" value="{{index1}}" range="{{array1}}">
+    <view class="picker">当前选择：{{array1[index1]}}</view>
+  </picker>
+</view>
+
+<view class="length">
+  <view class="oninput">
+    <input bindinput="oninput"></input>
+  </view>
+</view>
+
+<view class="section2"> 
+  <view class="section2_title">转换单位</view>
+  <picker bindchange="bindchange2" value="{{index2}}" range="{{array2}}">
+    <view class="picker">当前选择：{{array2[index2]}}</view>
+  </picker>
+</view>
+
+<view class="output">
+  <view class="value">
+    <view wx:if="{{index1==0 & index2==0}}">{{value}}</view>
+    <view wx:elif="{{index1==0 & index2==1}}">{{value*0.1}}</view>
+    <view wx:elif="{{index1==0 & index2==2}}">{{value*0.001}}</view>
+    <view wx:elif="{{index1==0 & index2==3}}">{{value*0.000001}}</view>
+    <view wx:elif="{{index1==1 & index2==0}}">{{value*10}}</view>
+    <view wx:elif="{{index1==1 & index2==1}}">{{value}}</view>
+    <view wx:elif="{{index1==1 & index2==2}}">{{value*0.01}}</view>
+    <view wx:elif="{{index1==1 & index2==3}}">{{value*0.00001}}</view>
+    <view wx:elif="{{index1==2 & index2==0}}">{{value*1000}}</view>
+    <view wx:elif="{{index1==2 & index2==1}}">{{value*100}}</view>
+    <view wx:elif="{{index1==2 & index2==2}}">{{value}}</view>
+    <view wx:elif="{{index1==2 & index2==3}}">{{value*0.001}}</view>
+    <view wx:elif="{{index1==3 & index2==0}}">{{value*1000000}}</view>
+    <view wx:elif="{{index1==3 & index2==1}}">{{value*100000}}</view>
+    <view wx:elif="{{index1==3 & index2==2}}">{{value*1000}}</view>
+    <view wx:elif="{{index1==3 & index2==3}}">{{value}}</view>
+  </view>
+</view>
+
+<view class="others">
+  <text class="title">直观表示方式</text>
+</view>
+
+<view class="icon">
+  <view class="combination">
+    <view wx:if="{{index1 == 0}}">
+      <view class="num">{{filters.toFix2(value/146.7)}} 个手机</view>
+    </view>
+    <view wx:elif="{{index1 == 1}}">
+      <view class="num">{{filters.toFix2(value*10/146.7)}} 个手机</view>
+    </view>
+    <view wx:elif="{{index1 == 2}}">
+      <view class="num">{{filters.toFix2(value*1000/146.7)}} 个手机</view>
+    </view>
+    <view wx:elif="{{index1 == 3}}">
+      <view class="num">{{filters.toFix2(value*1000000/146.7)}} 个手机</view>
+    </view>
+    <image class="pic" src="https://ccdn.goodq.top/caches/82fee4717198948d6253764710980ee2/aHR0cHM6Ly93d3cueTNxLm5ldC9xZnktY29udGVudC91cGxvYWRzLzIwMjAvMTAvNWE2NTE4ODE2ODcyMDcyNWQ1OWY4MTA3YWE0MWRhY2QtMjEweDIxMC5wbmc_p_p100_p_3D.png"></image>
+  </view>
+  <view class="combination">
+    <view wx:if="{{index1 == 0}}">
+      <view class="num">{{filters.toFix2(value/1750)}} 个正常人</view>
+    </view>
+    <view wx:elif="{{index1 == 1}}">
+      <view class="num">{{filters.toFix2(value*10/1750)}} 个正常人</view>
+    </view>
+    <view wx:elif="{{index1 == 2}}">
+      <view class="num">{{filters.toFix2(value*1000/1750)}} 个正常人</view>
+    </view>
+    <view wx:elif="{{index1 == 3}}">
+      <view class="num">{{filters.toFix2(value*1000000/1750)}} 个正常人</view>
+    </view>
+    <image class="pic" src="https://ccdn.goodq.top/caches/82fee4717198948d6253764710980ee2/aHR0cHM6Ly93d3cueTNxLm5ldC9xZnktY29udGVudC91cGxvYWRzLzIwMjAvMTAvMjU3NzIyZjNkMzIzOGI1ZWQ0MGY5ZDllMTE2ZTMyMjYtMjEweDIxMC5wbmc_p_p100_p_3D.png"></image>
+  </view>
+  <view class="combination">
+    <view wx:if="{{index1 == 0}}">
+      <view class="num">{{filters.toFix2(value/324000)}} 个巴黎铁塔</view>
+    </view>
+    <view wx:elif="{{index1 == 1}}">
+      <view class="num">{{filters.toFix2(value*10/324000)}} 个巴黎铁塔</view>
+    </view>
+    <view wx:elif="{{index1 == 2}}">
+      <view class="num">{{filters.toFix2(value*1000/324000)}} 个巴黎铁塔</view>
+    </view>
+    <view wx:elif="{{index1 == 3}}">
+      <view class="num">{{filters.toFix2(value*1000000/324000)}} 个巴黎铁塔</view>
+    </view>
+    <image class="pic" src="https://ccdn.goodq.top/caches/82fee4717198948d6253764710980ee2/aHR0cHM6Ly93d3cueTNxLm5ldC9xZnktY29udGVudC91cGxvYWRzLzIwMjAvMTEvN2QxOGVmNzJlMzE4Y2FhZDliNWEyYTU1YTNkYWZkOWQtMjEweDIxMC5wbmc_p_p100_p_3D.png"></image>
+  </view>
+  <view class="combination">
+    <view wx:if="{{index1 == 0}}">
+      <view class="num">{{filters.toFix2(value/40076000000)}} 个赤道</view>
+    </view>
+    <view wx:elif="{{index1 == 1}}">
+      <view class="num">{{filters.toFix2(value*10/40067000000)}} 个赤道</view>
+    </view>
+    <view wx:elif="{{index1 == 2}}">
+      <view class="num">{{filters.toFix2(value*1000/40067000000)}} 个赤道</view>
+    </view>
+    <view wx:elif="{{index1 == 3}}">
+      <view class="num">{{filters.toFix2(value*1000000/40067000000)}} 个赤道</view>
+    </view>
+    <image class="pic" src="https://ccdn.goodq.top/caches/82fee4717198948d6253764710980ee2/aHR0cHM6Ly93d3cueTNxLm5ldC9xZnktY29udGVudC91cGxvYWRzLzIwMjAvMDYvYjU5YzM0YTU1ZmQ0ODc0MzZlYmQzNmVmOTc2ZmRiMDMtMjEweDIxMC5wbmc_p_p100_p_3D.png"></image>
+  </view>
+</view>
+
