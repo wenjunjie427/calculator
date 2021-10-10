@@ -1,0 +1,36 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/logs/logs",
+    "pages/turn/turn",
+    "pages/area/area",
+    "pages/BMI/BMI"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#ffffff",
+    "navigationBarTitleText": "calculator",
+    "navigationBarTextStyle":"black"
+  },
+  "tabBar": {
+    "color": "lightblue",
+    "selectedColor": "#000000",
+    "backgroundColor": "white",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "iconPath": "image/calculator.png",
+        "selectedIconPath": "image/calculator.png",
+        "text": "计算器"
+      },
+      {
+        "pagePath": "pages/turn/turn",
+        "iconPath": "image/turn.png",
+        "selectedIconPath": "image/turn.png",
+        "text": "转换器"
+      }
+    ]
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

@@ -1,0 +1,32 @@
+<view class="btns">
+  <button class="button" bindtap="goLength">
+    <image class="icon" src="https://ccdn.goodq.top/caches/82fee4717198948d6253764710980ee2/aHR0cHM6Ly93d3cueTNxLm5ldC9xZnktY29udGVudC91cGxvYWRzLzIwMjAvMTIvYWI5NTE2ODkwYTgyZjc4OGEzNWJmYjE5YTBmZDc2MTMtMjEweDIxMC5wbmc_p_p100_p_3D.png"></image>
+  </button>
+  <button class="button" bindtap="goWeight">
+    <image class="icon" src="https://ccdn.goodq.top/caches/82fee4717198948d6253764710980ee2/aHR0cHM6Ly93d3cueTNxLm5ldC9xZnktY29udGVudC91cGxvYWRzLzIwMjAvMDgvMDdhNmVkNGQyMDhmM2Y5NjI2OWIyYmI0MzEyMWRhNjgtMjEweDIxMC5wbmc_p_p100_p_3D.png"></image>
+  </button>
+  <button class="button" bindtap="goArea">
+    <image class="icon" src="https://ccdn.goodq.top/caches/82fee4717198948d6253764710980ee2/aHR0cHM6Ly93d3cueTNxLm5ldC9xZnktY29udGVudC91cGxvYWRzLzIwMjAvMTEvODZlNWY3ZjA3M2U4NzdlM2YyY2UxMTVlZTE0ZWU5MzAtMjEweDIxMC5wbmc_p_p100_p_3D.png"></image>
+  </button>
+  <button class="button" bindtap="goVolume">
+    <image class="icon" src="https://ccdn.goodq.top/caches/82fee4717198948d6253764710980ee2/aHR0cHM6Ly93d3cueTNxLm5ldC9xZnktY29udGVudC91cGxvYWRzLzIwMjAvMTIvODgwYjU0MDQ1NjFjYjMyNjU1OWE3YWUxMTA2YjkxZTMtMjEweDIxMC5wbmc_p_p100_p_3D.png"></image>
+  </button>
+  <button class="button" bindtap="goMoney">
+    <image class="icon" src="https://ccdn.goodq.top/caches/82fee4717198948d6253764710980ee2/aHR0cHM6Ly93d3cueTNxLm5ldC9xZnktY29udGVudC91cGxvYWRzLzIwMjEvMDIvNmYzZDQwNTJhYjgwNWJiMDYxNTdiNmVjYmYwY2Y4NTItMjEweDIxMC5wbmc_p_p100_p_3D.png"></image>
+  </button>
+  <button class="button" bindtap="goFood">
+    <image class="icon" src="https://ccdn.goodq.top/caches/82fee4717198948d6253764710980ee2/aHR0cHM6Ly93d3cueTNxLm5ldC9xZnktY29udGVudC91cGxvYWRzLzIwMjAvMTEvMTYzMTUyMmM1NmY1NDc0ZmEzY2FkOGJkMzg3OTM1MzAtMjEweDIxMC5wbmc_p_p100_p_3D.png"></image>
+  </button>
+  <button class="button" bindtap="goBMI">
+    <image class="icon" src="https://ccdn.goodq.top/caches/82fee4717198948d6253764710980ee2/aHR0cHM6Ly93d3cueTNxLm5ldC9xZnktY29udGVudC91cGxvYWRzLzIwMjAvMDgvOTk5Y2E0ZmU3NmZjM2NkMGUxNjE2ZmRiOWNjMzBlMjktMjEweDIxMC5wbmc_p_p100_p_3D.png"></image>
+  </button>
+  <button class="button" bindtap="goRun">
+    <image class="icon" src="https://ccdn.goodq.top/caches/82fee4717198948d6253764710980ee2/aHR0cHM6Ly93d3cueTNxLm5ldC9xZnktY29udGVudC91cGxvYWRzLzIwMjAvMTAvNDcxZDRkYTY1NjAzZWQ5ZWY1ZGM5YWRkODljYzYzYmMtMjEweDIxMC5wbmc_p_p100_p_3D.png"></image>
+  </button>
+  <button class="button" bindtap="goTime">
+    <image class="icon" src="https://ccdn.goodq.top/caches/82fee4717198948d6253764710980ee2/aHR0cHM6Ly93d3cueTNxLm5ldC9xZnktY29udGVudC91cGxvYWRzLzIwMjAvMDcvN2M1ZDQwMGU3MzQ3NzlmMGM4ZTkxY2Y1MjFjMjY5YTEtMjEweDIxMC5wbmc_p_p100_p_3D.png"></image>
+  </button>
+  <button class="button" bindtap="goVideo">
+    <image class="icon" src="https://ccdn.goodq.top/caches/82fee4717198948d6253764710980ee2/aHR0cHM6Ly93d3cueTNxLm5ldC9xZnktY29udGVudC91cGxvYWRzLzIwMTkvMDUvMDkzZjZhYjViMWM0NDFhZWE4MmYxOGViMmUxMWY2ZmItMjEweDIxMC5wbmc_p_p100_p_3D.png"></image>
+  </button>
+</view>

@@ -1,0 +1,80 @@
+/* pages/time/time.wxss */
+.section {
+  margin-top: 20px;
+  border: 3rpx solid cadetblue;
+  border-radius: 10rpx;
+  height: 80px;
+}
+
+.section_title {
+  margin-top: 10px;
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+
+.picker {
+  margin-top: 10px;
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+
+.time {
+  height: 40px;
+  margin-top: 20px;
+  border: 3rpx solid cadetblue;
+  border-radius: 10rpx;
+  background-color: lightblue;
+}
+
+.oninput {
+  margin: 10px 10rpx;
+}
+.others {
+  margin-top: 20px;
+  border: 3rpx solid cadetblue;
+  border-radius: 10rpx;
+  height: 40px;
+}
+
+.title {
+  margin-top: 10px;
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-top: 20px;
+  height: auto;
+  border: 3rpx solid cadetblue;
+  border-radius: 10rpx;
+  background-color: lightblue;
+}
+
+.combination {
+  margin-left: 40px;
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  width: 160px;
+  height: 150px;
+}
+
+.pic {
+  margin-top: 5px;
+  height: 100px;
+  width: 100px;
+}
+
+.num {
+  margin-top: 5px;
+  margin-left: 10px;
+}

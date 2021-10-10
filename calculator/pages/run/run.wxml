@@ -1,0 +1,60 @@
+<!--pages/run/run.wxml-->
+<view class="input_title">
+  <text class="title">输入年龄（周岁）</text>
+</view>
+<view class="run">
+  <view class="oninput">
+    <input bindinput="oninput1"></input>
+  </view>
+</view>
+<view class="input_title">
+  <text class="title">输入运动心率</text>
+</view>
+<view class="run">
+  <view class="oninput">
+    <input bindinput="oninput2"></input>
+  </view>
+</view>
+<view class="input_title">
+  <text class="title">运动状态</text>
+</view>
+<view class="state">
+  <view wx:if="{{age!='' & heartRate!='' & heartRate>(220-age)*0.5}}">
+    <block wx:if="{{heartRate<(220-age)*0.6}}">
+      <view class="combination">
+        <view class="condition">热身运动区</view>
+        <image class="pic" src="https://ccdn.goodq.top/caches/82fee4717198948d6253764710980ee2/aHR0cHM6Ly93d3cueTNxLm5ldC9xZnktY29udGVudC91cGxvYWRzLzIwMjAvMTEvOGRlYTc2ZDAwYmVhODZjOWFiOTExM2JmZDEzNTJkNzQtMjEweDIxMC5wbmc_p_p100_p_3D.png"></image>
+      </view>
+    </block>
+    <block wx:elif="{{heartRate < (220-age)*0.7}}">
+      <view class="combination">
+        <view class="condition">脂肪燃烧区</view>
+        <image class="pic" src="https://ccdn.goodq.top/caches/82fee4717198948d6253764710980ee2/aHR0cHM6Ly93d3cueTNxLm5ldC9xZnktY29udGVudC91cGxvYWRzLzIwMjAvMTEvYWVmNTYwMjQzMDZhNTA2MDRjMjg3ODg4N2YwOTk3YWUtMjEweDIxMC5wbmc_p_p100_p_3D.png"></image>
+      </view>
+    </block>
+    <block wx:elif="{{heartRate < (220-age)*0.8}}">
+      <view class="combination">
+        <view class="condition">糖原消耗区</view>
+        <image class="pic" src="https://ccdn.goodq.top/caches/82fee4717198948d6253764710980ee2/aHR0cHM6Ly93d3cueTNxLm5ldC9xZnktY29udGVudC91cGxvYWRzLzIwMjAvMDgvZjNmNDlmYTcwNDFmNjY5NzM3ODI1ZDVhZGViM2U3NzgtMjEweDIxMC5wbmc_p_p100_p_3D.png"></image>
+      </view>
+    </block>
+    <block wx:elif="{{heartRate < (220-age)*0.9}}">
+      <view class="combination">
+        <view class="condition">乳酸堆积区</view>
+        <image class="pic" src="https://ccdn.goodq.top/caches/82fee4717198948d6253764710980ee2/aHR0cHM6Ly93d3cueTNxLm5ldC9xZnktY29udGVudC91cGxvYWRzLzIwMjAvMTEvMGNkZmFkYzU2MTM1ZTc1NDIwZmEyMzlmNTZiNTc4OGQtMjEweDIxMC5wbmc_p_p100_p_3D.png"></image>
+      </view>
+    </block>
+    <block wx:elif="{{heartRate >= (220-age)*0.9}}">
+      <view class="combination">
+        <view class="condition">身体极限区</view>
+        <image class="pic" src="https://ccdn.goodq.top/caches/82fee4717198948d6253764710980ee2/aHR0cHM6Ly93d3cueTNxLm5ldC9xZnktY29udGVudC91cGxvYWRzLzIwMjAvMDgvZmFlOThlOGNkOGJkYzJlODNiNTk4ZGJhZDgyNTJjMGYtMjEweDIxMC5wbmc_p_p100_p_3D.png"></image>
+      </view>
+    </block>
+  </view>
+  <view wx:else>
+    <view class="combination">
+      <view class="condition">开始运动吧</view>
+      <image class="pic" src="https://ccdn.goodq.top/caches/82fee4717198948d6253764710980ee2/aHR0cHM6Ly93d3cueTNxLm5ldC9xZnktY29udGVudC91cGxvYWRzLzIwMjEvMDEvM2FmNTY1N2QzN2EzY2NiOWJlMjU0NzQyNDAxN2RlZTktMjEweDIxMC5wbmc_p_p100_p_3D.png"></image>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,43 @@
+<!--pages/food/food.wxml-->
+<wxs module="filters" src="../../utils/addmul.wxs"></wxs>
+<view class="input_title">
+  <text class="title">输入能量（千焦）</text>
+</view>
+
+<view class="food">
+  <view class="oninput">
+    <input bindinput="oninput"></input>
+  </view>
+</view>
+
+<view class="others">
+  <text class="title">直观表示方式</text>
+</view>
+
+<view class="icon">
+  <view class="combination">
+    <view class="num">看 {{filters.toFix2(value/72*4.184)}} 小时电视</view>
+    <image class="pic" src="https://ccdn.goodq.top/caches/82fee4717198948d6253764710980ee2/aHR0cHM6Ly93d3cueTNxLm5ldC9xZnktY29udGVudC91cGxvYWRzLzIwMjAvMDkvZTQ5M2JkMDgwZTIyMDRiNDVkNTllMTc4MjcyOGY0MDctMjEweDIxMC5wbmc_p_p100_p_3D.png"></image>
+  </view>
+  <view class="combination">
+      <view class="num">骑 {{filters.toFix2(value/184*4.184)}} 小时自行车</view>
+      <image class="pic" src="https://ccdn.goodq.top/caches/82fee4717198948d6253764710980ee2/aHR0cHM6Ly93d3cueTNxLm5ldC9xZnktY29udGVudC91cGxvYWRzLzIwMjAvMDcvZWRhNDIxNWEwMjljYjYzOTBmM2M5YTFiN2VkNjI2ZDQtMjEweDIxMC5wbmc_p_p100_p_3D.png"></image>
+  </view>
+  <view class="combination">
+      <view class="num">跳 {{filters.toFix2(value/300*4.184)}} 小时舞</view>
+      <image class="pic" src="https://ccdn.goodq.top/caches/82fee4717198948d6253764710980ee2/aHR0cHM6Ly93d3cueTNxLm5ldC9xZnktY29udGVudC91cGxvYWRzLzIwMjAvMDgvODY4ZjJiYjNhNjcyNjg3OWU3OTJlM2M0ZWRhNTI5Y2ItMjEweDIxMC5wbmc_p_p100_p_3D.png"></image>
+  </view>
+  <view class="combination">
+      <view class="num">跳 {{filters.toFix2(value/448*4.184)}} 小时绳</view>
+      <image class="pic" src="https://ccdn.goodq.top/caches/82fee4717198948d6253764710980ee2/aHR0cHM6Ly93d3cueTNxLm5ldC9xZnktY29udGVudC91cGxvYWRzLzIwMjEvMDEvZmExN2Y2MTI5NzM5ZjZlYWE0OTZlMzU5M2ZiMDRjNzItMjEweDIxMC5wbmc_p_p100_p_3D.png"></image>
+  </view>
+  <view class="combination">
+      <view class="num">{{filters.toFix2(value/655*4.184)}} 小时慢跑</view>
+      <image class="pic" src="https://ccdn.goodq.top/caches/82fee4717198948d6253764710980ee2/aHR0cHM6Ly93d3cueTNxLm5ldC9xZnktY29udGVudC91cGxvYWRzLzIwMjAvMDgvODkzM2E1MTlmNjE4Mjg0Y2ZmOGE4MzJhYjBmMTZkMzUtMjEweDIxMC5wbmc_p_p100_p_3D.png"></image>
+  </view>
+  <view class="combination">
+      <view class="num">{{filters.toFix2(value/1036*4.184)}} 小时游泳</view>
+      <image class="pic" src="https://ccdn.goodq.top/caches/82fee4717198948d6253764710980ee2/aHR0cHM6Ly93d3cueTNxLm5ldC9xZnktY29udGVudC91cGxvYWRzLzIwMjAvMDgvY2ZjZDNhYmZjNTgxZjc1NTc3MGUxMjMxNDk5ZTA0YmItMjEweDIxMC5wbmc_p_p100_p_3D.png"></image>
+  </view>
+</view>
+

@@ -1,0 +1,21 @@
+.btns {
+  margin-top: 0;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  background-color: rgb(211, 238, 248);
+  min-height: 100vh;
+}
+
+.button {
+  margin-top: 30rpx;
+  margin-bottom: 0;
+  background-color: cadetblue;
+  width: 200rpx;
+  height: 200rpx;
+}
+
+.icon {
+  width: 150rpx;
+  height: 150rpx;
+}

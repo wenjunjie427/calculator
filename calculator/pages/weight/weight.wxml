@@ -1,0 +1,126 @@
+<!--pages/weight/weight.wxml-->
+<wxs module="filters" src="../../utils/addmul.wxs"></wxs>
+<view class="section1"> 
+  <view class="section1_title">原单位</view>
+  <picker bindchange="bindchange1" value="{{index1}}" range="{{array1}}">
+    <view class="picker">当前选择：{{array1[index1]}}</view>
+  </picker>
+</view>
+
+<view class="weight">
+  <view class="oninput">
+    <input bindinput="oninput"></input>
+  </view>
+</view>
+
+<view class="section2"> 
+  <view class="section2_title">转换单位</view>
+  <picker bindchange="bindchange2" value="{{index2}}" range="{{array2}}">
+    <view class="picker">当前选择：{{array2[index2]}}</view>
+  </picker>
+</view>
+
+<view class="output">
+  <view class="value">
+    <view wx:if="{{index1==index2}}">{{value}}</view>
+    <view wx:elif="{{index1==0 & index2==1}}">{{value/1000}}</view>
+    <view wx:elif="{{index1==0 & index2==2}}">{{value/1000000}}</view>
+    <view wx:elif="{{index1==1 & index2==0}}">{{value*1000}}</view>
+    <view wx:elif="{{index1==1 & index2==2}}">{{value/1000}}</view>
+    <view wx:elif="{{index1==2 & index2==0}}">{{value*1000000}}</view>
+    <view wx:elif="{{index1==2 & index2==1}}">{{value*1000}}</view>
+    <view wx:elif="{{index1==0 & index2==3}}">{{value/500}}</view>
+    <view wx:elif="{{index1==0 & index2==4}}">{{value/50}}</view>
+    <view wx:elif="{{index1==1 & index2==3}}">{{value*2}}</view>
+    <view wx:elif="{{index1==1 & index2==4}}">{{value*20}}</view>
+    <view wx:elif="{{index1==2 & index2==3}}">{{value*2000}}</view>
+    <view wx:elif="{{index1==2 & index2==4}}">{{value/20000}}</view>
+    <view wx:elif="{{index1==3 & index2==0}}">{{value*500}}</view>
+    <view wx:elif="{{index1==3 & index2==1}}">{{value/2}}</view>
+    <view wx:elif="{{index1==3 & index2==2}}">{{value/2000}}</view>
+    <view wx:elif="{{index1==3 & index2==4}}">{{value*10}}</view>
+    <view wx:elif="{{index1==4 & index2==0}}">{{value*50}}</view>
+    <view wx:elif="{{index1==4 & index2==1}}">{{value/20}}</view>
+    <view wx:elif="{{index1==4 & index2==2}}">{{value/20000}}</view>
+    <view wx:elif="{{index1==4 & index2==3}}">{{value/10}}</view>
+  </view>
+</view>
+
+<view class="others">
+  <text class="title">直观表示方式</text>
+</view>
+
+<view class="icon">
+  <view class="combination">
+    <view wx:if="{{index1 == 0}}">
+      <view class="num">{{filters.toFix2(value/50)}} 个鸡蛋</view>
+    </view>
+    <view wx:elif="{{index1 == 1}}">
+      <view class="num">{{filters.toFix2(value*1000/50)}} 个鸡蛋</view>
+    </view>
+    <view wx:elif="{{index1 == 2}}">
+      <view class="num">{{filters.toFix2(value*1000000/50)}} 个鸡蛋</view>
+    </view>
+    <view wx:elif="{{index1 == 3}}">
+      <view class="num">{{filters.toFix2(value*500/50)}} 个鸡蛋</view>
+    </view>
+    <view wx:elif="{{index1 == 4}}">
+      <view class="num">{{filters.toFix2(value*50/50)}} 个鸡蛋</view>
+    </view>
+    <image class="pic" src="https://ccdn.goodq.top/caches/82fee4717198948d6253764710980ee2/aHR0cHM6Ly93d3cueTNxLm5ldC9xZnktY29udGVudC91cGxvYWRzLzIwMjAvMTAvZDRmMGM1MTMyOGU0YjM4NjlmZDczNmJjMTMxYjMxMDEtMjEweDIxMC5wbmc_p_p100_p_3D.png"></image>
+  </view>
+  <view class="combination">
+    <view wx:if="{{index1 == 0}}">
+      <view class="num">{{filters.toFix2(value/2000)}} 个游戏本</view>
+    </view>
+    <view wx:elif="{{index1 == 1}}">
+      <view class="num">{{filters.toFix2(value*1000/2000)}} 个游戏本</view>
+    </view>
+    <view wx:elif="{{index1 == 2}}">
+      <view class="num">{{filters.toFix2(value*1000000/2000)}} 个游戏本</view>
+    </view>
+    <view wx:elif="{{index1 == 3}}">
+      <view class="num">{{filters.toFix2(value*500/2000)}} 个游戏本</view>
+    </view>
+    <view wx:elif="{{index1 == 4}}">
+      <view class="num">{{filters.toFix2(value*50/2000)}} 个游戏本</view>
+    </view>
+    <image class="pic" src="https://ccdn.goodq.top/caches/82fee4717198948d6253764710980ee2/aHR0cHM6Ly93d3cueTNxLm5ldC9xZnktY29udGVudC91cGxvYWRzLzIwMjEvMDEvOWY0MTUwMzBjMDdiZWUwMjNiMTU4NTFiZTEzZDNmOTQtMjEweDIxMC5wbmc_p_p100_p_3D.png"></image>
+  </view>
+  <view class="combination">
+    <view wx:if="{{index1 == 0}}">
+      <view class="num">{{filters.toFix2(value/495)}} 本高等数学</view>
+    </view>
+    <view wx:elif="{{index1 == 1}}">
+      <view class="num">{{filters.toFix2(value*1000/495)}} 本高等数学</view>
+    </view>
+    <view wx:elif="{{index1 == 2}}">
+      <view class="num">{{filters.toFix2(value*1000000/495)}} 本高等数学</view>
+    </view>
+    <view wx:elif="{{index1 == 3}}">
+      <view class="num">{{filters.toFix2(value*500/495)}} 本高等数学</view>
+    </view>
+    <view wx:elif="{{index1 == 4}}">
+      <view class="num">{{filters.toFix2(value*50/495)}} 本高等数学</view>
+    </view>
+    <image class="pic" src="https://ccdn.goodq.top/caches/82fee4717198948d6253764710980ee2/aHR0cHM6Ly93d3cueTNxLm5ldC9xZnktY29udGVudC91cGxvYWRzLzIwMjAvMDgvY2E2YzE5YzM5ODM0ZTIyMmUxZGI2YzFhZDAxYjY1YjAtMjEweDIxMC5wbmc_p_p100_p_3D.png"></image>
+  </view>
+  <view class="combination">
+    <view wx:if="{{index1 == 0}}">
+      <view class="num">{{filters.toFix2(value/15000000)}} 辆泥头车</view>
+    </view>
+    <view wx:elif="{{index1 == 1}}">
+      <view class="num">{{filters.toFix2(value*1000/15000000)}} 辆泥头车</view>
+    </view>
+    <view wx:elif="{{index1 == 2}}">
+      <view class="num">{{filters.toFix2(value*1000000/15000000)}} 辆泥头车</view>
+    </view>
+    <view wx:elif="{{index1 == 3}}">
+      <view class="num">{{filters.toFix2(value*500/15000000)}} 辆泥头车</view>
+    </view>
+    <view wx:elif="{{index1 == 4}}">
+      <view class="num">{{filters.toFix2(value*50/15000000)}} 辆泥头车</view>
+    </view>
+    <image class="pic" src="https://ccdn.goodq.top/caches/82fee4717198948d6253764710980ee2/aHR0cHM6Ly93d3cueTNxLm5ldC9xZnktY29udGVudC91cGxvYWRzLzIwMjAvMDYvNTU2OTRkYTcxOWU0MGUxMjNjNjM4ZDUyZTFhYjMzOWYtMjEweDIxMC5wbmc_p_p100_p_3D.png"></image>
+  </view>
+</view>
