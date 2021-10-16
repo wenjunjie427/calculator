@@ -83,17 +83,18 @@
   flex-wrap: wrap;
   margin-top: 20px;
   height: auto;
+  width: 100%;
   border: 3rpx solid cadetblue;
   border-radius: 10rpx;
   background-color: lightblue;
 }
 
 .combination {
-  margin-left: 50px;
+  margin-left: 55px;
   margin-top: 10px;
   display: flex;
   flex-direction: column;
-  width: 150px;
+  width: 30%;
   height: 150px;
 }
 

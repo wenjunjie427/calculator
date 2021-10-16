@@ -8,7 +8,7 @@
 }
 
 .button {
-  margin-top: 30rpx;
+  margin-top: 30px;
   margin-bottom: 0;
   background-color: cadetblue;
   width: 200rpx;

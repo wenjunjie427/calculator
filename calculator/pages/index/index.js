@@ -1,130 +1,105 @@
-var Binding = require('../../utils/binding');
 Page({
   data: {
-    array: ['ac','+/-','%','/',
-            '7','8','9','*',
-            '4','5','6','-',
-            '1','2','3','+',
-            '0','.','='],
-    currentEnd: '0',
-    operator: '',
+    num: "", //前台页面显示的输入数字或者结果
+    op: "", //前台页面显示的操作符
+    n: 0
   },
-  bindtap: function(res){
-    var index = res.currentTarget.dataset.index;
-    var currentEnd = this.data.currentEnd;
-    var operator = this.data.operator;
-    if (index==0){
-      currentEnd = '0';
-      operator = '';
-    }else if (index==1){
-      var endW = operator.substr(-1,1);
-      if (endW == '%' || endW=='/' || endW=='*' || endW=='+' || endW=='-') {
-        console.log("最后是运算符，不做处理");
-      }else{
-        var str = operator.substr(0,operator.length - (currentEnd + '').length);
-        currentEnd = currentEnd * 1;
-        currentEnd = -currentEnd;
-        operator = str +(currentEnd + '');
-      }
-    }else if (index==17){
-      var endW = operator.substr(-1,1);
-      if (endW=='%' || endW=='/' || endW=='*' || endW=='+' || endW=='-') {
-        console.log("最后是运算符，不做处理");
-      }else {
-        if ((currentEnd + '').indexOf('.') == -1) {
-          if (currentEnd == 0) {
-            currentEnd = currentEnd + '.';
-            operator = currentEnd;
-          }else {
-            currentEnd = currentEnd + '.';
-            operator = currentEnd;
-          }
-        } else {
-          console.log('已经是小数了，不做处理');
-        }
-      }
-    }else if (index==18){
-      var endW = operator.substr(-1,1);
-      if (endW=='%' || endW=='/' || endW=='*' || endW=='+' || endW=='-' || endW=='.') {
-        operator = operator.substr(0,operator.length - 1);
-      }
-      currentEnd = wx.binding.eval(operator);
-      operator = '';
-    }else if (index==2){
-      operator = this.fuhaoFun(operator,'%',currentEnd);
-    }else if (index==3){
-      operator = this.fuhaoFun(operator,'/',currentEnd);
-    }else if (index==7){
-      operator = this.fuhaoFun(operator,'*',currentEnd);
-    }else if (index==11){
-      operator = this.fuhaoFun(operator,'-',currentEnd);
-    }else if (index==15){
-      operator = this.fuhaoFun(operator,'+',currentEnd);
-    }else if (index==16){
-      currentEnd = this.yunsuanFun(operator,currentEnd,0);
-      operator += '0';
-    }else if (index==4){
-      currentEnd = this.yunsuanFun(operator,currentEnd,7);
-      operator += '7';
-    }else if (index==5){
-      currentEnd = this.yunsuanFun(operator,currentEnd,8);
-      operator += '8';
-    }else if (index==6){
-      currentEnd = this.yunsuanFun(operator,currentEnd,9);
-      operator += '9';
-    }else if (index==8){
-      currentEnd = this.yunsuanFun(operator,currentEnd,4);
-      operator += '4';
-    }else if (index==9){
-      currentEnd = this.yunsuanFun(operator,currentEnd,5);
-      operator += '5';
-    }else if (index==10){
-      currentEnd = this.yunsuanFun(operator,currentEnd,6);
-      operator += '6';
-    }else if (index==12){
-      currentEnd = this.yunsuanFun(operator,currentEnd,1);
-      operator += '1';
-    }else if (index==13){
-      currentEnd = this.yunsuanFun(operator,currentEnd,2);
-      operator += '2';
-    }else if (index==14){
-      currentEnd = this.yunsuanFun(operator,currentEnd,3);
-      operator += '3';
+  result: null, //装载计算结果
+  isClear: true, //是否需要清理前面的数字，true是要清理
+
+  numBtn: function(e) {
+    var num = e.target.dataset.val; //获取你输入的数字
+    var n = this.data.n;
+    if (this.isClear || this.data.num == "0") //如果需要清理前面的数字，那么前面的数字就不需要保存
+    {
+      this.isClear = false; //将清理标志设置为false，以便连续输入数字
+      this.setData({
+        num: num
+      });
+    } else {
+      this.setData({
+        num: this.data.num + num //不清理前面的内容，将输入的内容追加到最后面,这是字符串的连接操作，因为两边都是字符串类型
+      });
+    };
+    if (this.data.num.indexOf(".") > 0) {
+      this.setData({
+        n: n+1
+      })
     }
-    console.log(operator+'='+currentEnd);
+
+  },
+
+  opBtn: function(e) {
+    var op = this.data.op; //获取上一次的操作符
+    var num = Number(this.data.num); //获取操作数
+    var n = this.data.n;
     this.setData({
-      currentEnd: currentEnd,
-      operator: operator,
-    })
+      op: e.target.dataset.val
+    });
+    if (this.isClear) //当你连续点击操作符的时候，操作无效
+    {
+      return;
+    }
+    this.isClear = true; //设置清理内容标志
+    if (this.result == null) //将第一次运算设置为当前的操作数
+    {
+      this.result = num;
+      return;
+    }
+    //运算符的运算
+    if (op == "+") {
+      // this.result = cals.add(this.result, num);
+      this.result = this.result + num; //数字加，因为num是数字类型
+    } else if (op == "-") {
+      // this.result = cals.sub(this.result, num);
+      this.result = this.result - num;
+      this.result = Number(this.result.toFixed(n));
+    } else if (op == "*") {
+      // this.result = cals.mul(this.result, num);
+      this.result = this.result * num;
+      this.result = Number(this.result.toFixed(n));
+    } else if (op == "/") {
+      // this.result = cals.div(this.result, num);
+      this.result = (this.result * 10**n / num) / 10**n;
+    } else if (op == "%") {
+      this.result = this.result % num;
+    }
+
+    this.setData({
+      num: this.result
+    });
   },
 
-  yunsuanFun : function (operator,currentEnd,num){
-    if (operator.length == 0){
-      currentEnd = num;
-    }else {
-      if (currentEnd == 0) {
-        currentEnd = num;
-      }else {
-        currentEnd = operator + num;
-      }
+  doBtn: function(e) {
+    if (this.isClear) //如果直接点击小数点，则显示"0."
+    {
+      this.setData({
+        num: "0."
+      });
+      this.isClear = false;
+      return;
     }
-    return currentEnd;
+    if (this.data.num.indexOf(".") >= 0) //查询前面输入的数字中，是否存在小数点
+    {
+      return; //如果存在小数点，当前输入无效
+    }
+    this.setData({
+      num: this.data.num + "."
+    });
   },
-
-  fuhaoFun: function(operator,fuhao,currentEnd){
-    if(operator.length==0){
-      operator = currentEnd + fuhao;
-      return operator;
-    }
-    var endW = operator.substr(-1,1);
-    if (endW == '%' || endW=='/' || endW=='*' || endW=='+' || endW=='-') {
-      operator = operator.substr(0,operator.length-1);
-      operator += fuhao;
-    }else if(endW == '.'){
-      operator = operator + '0' + fuhao;
-    }else {
-      operator += fuhao;
-    }
-    return operator;
+  delBtn: function(e) {
+    var num = this.data.num.substr(0, this.data.num.length - 1);
+    this.setData({
+      num: num == "" ? "0" : num
+    });
+  },
+  resetBtn: function(e) {
+    this.result = null;
+    this.isClear = true;
+    this.setData({
+      num: '0',
+      op: '',
+      n: 0
+    });
   }
 })

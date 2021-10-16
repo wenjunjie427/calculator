@@ -89,11 +89,11 @@
 }
 
 .combination {
-  margin-left: 50px;
+  margin-left: 55px;
   margin-top: 10px;
   display: flex;
   flex-direction: column;
-  width: 150px;
+  width: 30%;
   height: 150px;
 }
 

@@ -1,61 +1,60 @@
 /**index.wxss**/
-.body{
-  width: 100%;
-  height: 100vh;
-  background-color: lightblue;
-  display: flex;
-  flex-direction: column-reverse;
-}
-
-.end{
-  width: 100%;
-  height: 25%;
+.result {
+  flex: 1; /* 弹性填充满*/
+  background: #f3f6fe;
   position: relative;
+  background-color: lightblue;
 }
 
-.end text{
+.btns {
+  flex: 1;
+  display: flex; /*弹性显示结构*/
+  flex-direction: column; /*纵向显示*/
+  font-size: 17pt;
+  border-top: 1rpx solid #ccc;
+  border-left: 1rpx solid #ccc;
+  background-color: rgb(86, 169, 172);
+}
+
+page {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.btns>view {
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+}
+
+.btns>view>view {
+  flex-basis: 25%;
+  border-right: 1rpx solid #ccc;
+  border-top: 1rpx solid rgb(150, 147, 147);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btns>view:last-child>view:first-child {
+  flex-basis: 50%;
+}
+
+.bg {
+  background-color: lightblue;
+}
+
+.result_num {
+  font-size: 17pt;
   position: absolute;
-  bottom: 0;
-  right: 5px;
-  font-size: 60px;
-  color: black;
-  display: -webkit-box;
-  word-break: break-all;
-  text-overflow: ellipsis;
-  overflow: hidden;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 3;
+  bottom: 5vh;
+  right: 3vw;
 }
 
-.bottom{
-  width: 100%;
-  height: 450px;
-  background-color: cadetblue;
-}
-
-.bottom .item{
-  display: inline-block;
-  width: 25%;
-  height: 90px;
-  background-color: #eeeeee;
-  color: black;
-  text-align: center;
-  line-height: 90px;
-  font-size: 20px;
-  border: 1px solid #777777;
-  box-sizing: border-box;
-}
-
-.bottom .gray{
-  background-color: lightgray;
-  color: black;
-}
-
-.bottom .orange{
-  background-color: cadetblue;
-  color: white;
-}
-
-.bottom .twoItem{
-  width: 50%;
+.result_op {
+  font-size: 17pt;
+  position: absolute;
+  bottom: 1vh;
+  right: 3vw;
 }
