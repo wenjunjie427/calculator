@@ -49,11 +49,10 @@ Page({
     //运算符的运算
     if (op == "+") {
       // this.result = cals.add(this.result, num);
-      this.result = this.result + num; //数字加，因为num是数字类型
+      this.result = (this.result * 10**10 + num * 10**10)/10**10; //数字加，因为num是数字类型
     } else if (op == "-") {
       // this.result = cals.sub(this.result, num);
-      this.result = this.result - num;
-      this.result = Number(this.result.toFixed(n));
+      this.result = (this.result * 10**10 - num * 10**10)/10**10;
     } else if (op == "*") {
       // this.result = cals.mul(this.result, num);
       this.result = this.result * num;

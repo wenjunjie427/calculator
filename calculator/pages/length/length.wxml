@@ -28,8 +28,8 @@
     <view wx:elif="{{index1==0 & index2==3}}">{{value*0.000001}}</view>
     <view wx:elif="{{index1==1 & index2==0}}">{{value*10}}</view>
     <view wx:elif="{{index1==1 & index2==1}}">{{value}}</view>
-    <view wx:elif="{{index1==1 & index2==2}}">{{value*0.01}}</view>
-    <view wx:elif="{{index1==1 & index2==3}}">{{value*0.00001}}</view>
+    <view wx:elif="{{index1==1 & index2==2}}">{{value/100}}</view>
+    <view wx:elif="{{index1==1 & index2==3}}">{{value/100000}}</view>
     <view wx:elif="{{index1==2 & index2==0}}">{{value*1000}}</view>
     <view wx:elif="{{index1==2 & index2==1}}">{{value*100}}</view>
     <view wx:elif="{{index1==2 & index2==2}}">{{value}}</view>
@@ -63,16 +63,16 @@
   </view>
   <view class="combination">
     <view wx:if="{{index1 == 0}}">
-      <view class="num">{{filters.toFix2(value/1750)}} 个正常人</view>
+      <view class="num">{{filters.toFix2(value/1750)}} 位龚源宏</view>
     </view>
     <view wx:elif="{{index1 == 1}}">
-      <view class="num">{{filters.toFix2(value*10/1750)}} 个正常人</view>
+      <view class="num">{{filters.toFix2(value*10/1750)}} 位龚源宏</view>
     </view>
     <view wx:elif="{{index1 == 2}}">
-      <view class="num">{{filters.toFix2(value*1000/1750)}} 个正常人</view>
+      <view class="num">{{filters.toFix2(value*1000/1750)}} 位龚源宏</view>
     </view>
     <view wx:elif="{{index1 == 3}}">
-      <view class="num">{{filters.toFix2(value*1000000/1750)}} 个正常人</view>
+      <view class="num">{{filters.toFix2(value*1000000/1750)}} 位龚源宏</view>
     </view>
     <image class="pic" src="https://ccdn.goodq.top/caches/82fee4717198948d6253764710980ee2/aHR0cHM6Ly93d3cueTNxLm5ldC9xZnktY29udGVudC91cGxvYWRzLzIwMjAvMTAvMjU3NzIyZjNkMzIzOGI1ZWQ0MGY5ZDllMTE2ZTMyMjYtMjEweDIxMC5wbmc_p_p100_p_3D.png"></image>
   </view>
